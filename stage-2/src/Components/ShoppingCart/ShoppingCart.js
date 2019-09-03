@@ -15,7 +15,7 @@ class ShoppingCart extends Component {
                 className="shopping-cart-button"
                 onClick={() => this.props.removeFromCart(element)}
               >
-                Remove From Shopping Cart
+                Remove From Cart
               </button>
             </div>
           </div>
