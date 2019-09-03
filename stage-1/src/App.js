@@ -26,11 +26,13 @@ class App extends Component {
       });
   }
   addToCart(item) {
+    // console.log('hello', item)
     this.setState({
       cart: [...this.state.cart, item]
     });
   }
   removeFromCart(index) {
+    // console.log('removefromcart')
     let cartCopy = this.state.cart.slice();
     cartCopy.splice(index, 1);
     this.setState({
@@ -55,9 +57,9 @@ class App extends Component {
         <NavBar navigate={this.navigate} />
         <div className="main-container">
           {showCart ? (
-            <ShoppingCart cart={this.state.cart} />
+            <ShoppingCart removeFromCart={this.removeFromCart} cart={this.state.cart} />
           ) : (
-            <StoreFront addToCart={() => this.addToCart} products={products} />
+            <StoreFront addToCart={this.addToCart} products={products} />
           )}
         </div>
       </div>
