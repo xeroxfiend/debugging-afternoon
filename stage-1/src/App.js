@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import StoreFront from "./Components/StoreFront/StoreFront";
-import ShoppingCart from "./Components/ShoppingCart/ShoppingCart";
-import NavBar from "./Components/NavBar/NavBar";
+import StoreFront from "./Components/StoreFront/StoreFront.js";
+import ShoppingCart from "./Components/ShoppingCart/ShoppingCart.js";
+import NavBar from "./Components/NavBar/NavBar.js";
 import axios from 'axios'
 
 class App extends Component {
@@ -55,9 +55,9 @@ class App extends Component {
         <NavBar navigate={this.navigate} />
         <div className="main-container">
           {showCart ? (
-            <ShoppingCart cart={cart} />
+            <ShoppingCart cart={this.state.cart} />
           ) : (
-            <StoreFront products={products} />
+            <StoreFront addToCart={() => this.addToCart} products={products} />
           )}
         </div>
       </div>
